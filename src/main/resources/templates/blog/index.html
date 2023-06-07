@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My Posts</title>
+</head>
+<body>
+
+<h1>Posts</h1>
+
+<div th:each="post : ${posts}">
+    <span th:text="${post.createdAt.getMonth() + ' '
+    + post.createdAt.getDayOfMonth() +
+     ', ' + post.createdAt.getYear()}">
+        Post Data
+    </span>
+    <br>
+    <a th:href="@{/blog/{id} (id=${post.id})}" th:text="${post.title}">Post Name</a>
+</div>
+
+</body>
+</html>

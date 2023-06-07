@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Post</title>
+</head>
+<body>
+
+<h1 th:text="${post.title}">Post Title</h1>
+
+<span th:text="${post.createdAt.getMonth() + ' '
+        + post.createdAt.getDayOfMonth() +
+        ', ' + post.createdAt.getYear()}">
+    Post Data
+</span>
+
+
+<p th:text="${content}">Post Content</p>
+
+</body>
+</html>
